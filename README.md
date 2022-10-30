@@ -23,9 +23,12 @@ Detta är ett grupprojekt i grupper om *3 personer*.
 ### Gruppkontrakt
 Varje grupp skall upprätta ett gruppkonktrakt med följande punkter:
 
-* 
-* 
-
+* Vilka dagar och tider jobbar vi?
+* Var träffas vi? Exempel: i skolan, online, på caféer m.m.
+* Vilka kommunikationskanaler ska vi ha? Exempel: Slack, Discord, e-post...
+* Vad förväntas av varje gruppmedlem gällande kommunikation?
+* Vad förväntas av varje gruppmedlem gällande aktivitet?
+* Vad blir det för konsekvenser om man inte är aktiv i projektet?
 
 
 ## Betygskriterier
