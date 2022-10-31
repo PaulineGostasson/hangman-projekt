@@ -8,3 +8,9 @@ figure.head     svg #head      { opacity: 1; }
 figure.body     svg #body      { opacity: 1; }
 figure.arms     svg #arms      { opacity: 1; }
 figure.legs     svg #legs      { opacity: 1; }
+
+:root{
+    --errorcolor: rgb(243, 56, 56);
+    --succescolor: rgb(49, 255, 49);
+    --backgroundcolor: rgb(192, 192, 192);
+}
