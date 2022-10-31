@@ -1,6 +1,5 @@
 figure svg > * {
     opacity: 0;
-    transition: opacity .3s ease;
 }
 
 figure svg #ground             { opacity: 1; }
