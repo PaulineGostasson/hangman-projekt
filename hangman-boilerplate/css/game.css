@@ -51,9 +51,12 @@ body {
 }
 
 #alphabet-hold {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
   justify-content: center;
   list-style: none;
   align-items: center;
   gap: 0.3rem;
 }
+
+
