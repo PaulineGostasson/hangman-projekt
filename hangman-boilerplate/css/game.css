@@ -82,3 +82,7 @@ body {
   border-bottom: 2px solid black;
   color: white;
 }
+
+.make-visible {
+  color: black;
+}
