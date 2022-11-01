@@ -52,10 +52,10 @@ body {
 
 #alphabet-hold {
   display: grid;
-  grid-template-columns: repeat(13, 1fr);
+  grid-template-columns: repeat(9, 1fr);
   justify-content: center;
   list-style: none;
-  align-items: center;
+  align-content: center;
   gap: 0.3rem;
 }
 
