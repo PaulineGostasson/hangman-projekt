@@ -41,3 +41,19 @@ body {
   height: 100vh;
   width: 100vw;
 }
+
+#alphabet-hold li button{
+  background-color: black;
+  color: white;
+  border-radius: 2px;
+  height: 2.2rem;
+  width: 2.2rem;
+}
+
+#alphabet-hold {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  align-items: center;
+  gap: 0.3rem;
+}
