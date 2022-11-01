@@ -57,8 +57,7 @@ body {
   list-style: none;
   align-content: center;
   gap: 0.3rem;
-  border: 2px solid black;
-  margin: 12rem 0 0 0;
+  margin: 9rem 0 0 0;
 }
 
 #alphabet-hold li button:hover {
@@ -68,4 +67,18 @@ body {
 
 #catagory {
   text-align: center;
+}
+
+#correct-word-ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+}
+
+#correct-word-ul li {
+  margin: 0 1rem 0;
+  font-size: 35px;
+  border-bottom: 2px solid black;
+  color: white;
 }

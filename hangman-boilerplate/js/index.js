@@ -7,16 +7,9 @@
  document.querySelector('figure').classList.add('legs')
 
  */
-
-const ul = document.querySelector("ul");
-
-// Gets a random word from word array.
-function getRandomWord() {
-  const categoryWords = ["SWEDEN", "DENMARK"];
-  const correctWord =
-    categoryWords[Math.floor(Math.random() * categoryWords.length)];
-  console.log(correctWord);
-}
+const alphabetUL = document.querySelector("#alphabet-hold");
+const correctWordUL = document.querySelector("#correct-word-ul");
+let correctWord = "";
 
 const alphabetArray = [
   "A",
@@ -49,5 +42,24 @@ const alphabetArray = [
 
 for (let i = 0; i < alphabetArray.length; i++) {
   const letterToPush = `<li><button id="button${alphabetArray[i]}">${alphabetArray[i]}</button></li>`;
-  ul.insertAdjacentHTML("beforeend", letterToPush);
+  alphabetUL.insertAdjacentHTML("beforeend", letterToPush);
+}
+
+getRandomWord();
+
+const correctWordArray = [];
+for (let i = 0; i < correctWord.length; i++) {
+  correctWordArray.push(correctWord[i]);
+}
+
+// lägga in allt som li / p element i UL.........
+for (let i = 0; i < correctWordArray.length; i++) {
+  const correctWordLetterToPush = `<li><p class="letter${correctWordArray[i]}">${correctWordArray[i]}</p></li>`;
+  correctWordUL.insertAdjacentHTML("beforeend", correctWordLetterToPush);
+}
+
+// Gets a random word from word array.
+function getRandomWord() {
+  const categoryWords = ["SWEDEN", "DENMARK"];
+  correctWord = categoryWords[Math.floor(Math.random() * categoryWords.length)];
 }
