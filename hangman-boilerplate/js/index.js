@@ -10,6 +10,14 @@
 
 const ul = document.querySelector("ul");
 
+// Gets a random word from word array.
+function getRandomWord() {
+  const categoryWords = ["SWEDEN", "DENMARK"];
+  const correctWord =
+    categoryWords[Math.floor(Math.random() * categoryWords.length)];
+  console.log(correctWord);
+}
+
 const alphabetArray = [
   "A",
   "B",

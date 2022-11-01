@@ -42,7 +42,7 @@ body {
   width: 100vw;
 }
 
-#alphabet-hold li button{
+#alphabet-hold li button {
   background-color: black;
   color: white;
   border-radius: 2px;
@@ -57,6 +57,8 @@ body {
   list-style: none;
   align-content: center;
   gap: 0.3rem;
+  border: 2px solid black;
+  margin: 12rem 0 0 0;
 }
 
 #alphabet-hold li button:hover {
@@ -64,4 +66,6 @@ body {
   cursor: pointer;
 }
 
-
+#catagory {
+  text-align: center;
+}
