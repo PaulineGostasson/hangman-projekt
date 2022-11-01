@@ -1,1 +1,41 @@
 @import url(style.css);
+
+figure svg > * {
+  opacity: 1;
+}
+
+figure svg #ground {
+  opacity: 1;
+}
+figure.scaffold svg #scaffold {
+  opacity: 1;
+}
+figure.head svg #head {
+  opacity: 1;
+}
+figure.body svg #body {
+  opacity: 1;
+}
+figure.arms svg #arms {
+  opacity: 1;
+}
+figure.legs svg #legs {
+  opacity: 1;
+}
+
+figure {
+  border: 2px solid black;
+  width: 33vw;
+  margin: 0 auto;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+}
