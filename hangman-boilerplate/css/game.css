@@ -53,7 +53,7 @@ body {
 #alphabet-hold {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
-  justify-content: center;
+  justify-items: center;
   list-style: none;
   align-content: center;
   gap: 0.3rem;
