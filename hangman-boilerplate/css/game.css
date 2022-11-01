@@ -23,9 +23,10 @@ figure.legs svg #legs {
   opacity: 1;
 }
 
-figure {
-  border: 2px solid black;
-  width: 33vw;
+svg {
+  width: 100vw;
+  max-height: 50vh;
+  padding: 3rem;
   margin: 0 auto;
 }
 
