@@ -60,6 +60,6 @@ for (let i = 0; i < correctWordArray.length; i++) {
 
 // Gets a random word from word array.
 function getRandomWord() {
-  const categoryWords = ["SWEDEN", "DENMARK"];
+  const categoryWords = ["SWEDEN", "DENMARK", "NORWAY"];
   correctWord = categoryWords[Math.floor(Math.random() * categoryWords.length)];
 }
