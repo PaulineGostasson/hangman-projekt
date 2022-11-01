@@ -59,4 +59,9 @@ body {
   gap: 0.3rem;
 }
 
+#alphabet-hold li button:hover {
+  background-color: gray;
+  cursor: pointer;
+}
+
 
