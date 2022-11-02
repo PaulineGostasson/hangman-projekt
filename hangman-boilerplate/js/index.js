@@ -1,12 +1,9 @@
-/**
- För att toggla SVG:en
- document.querySelector('figure').classList.add('scaffold')
- document.querySelector('figure').classList.add('head')
- document.querySelector('figure').classList.add('body')
- document.querySelector('figure').classList.add('arms')
- document.querySelector('figure').classList.add('legs')
+document.querySelector("figure").classList.add("scaffold");
+document.querySelector("figure").classList.add("head");
+document.querySelector("figure").classList.add("body");
+document.querySelector("figure").classList.add("arms");
+document.querySelector("figure").classList.add("legs");
 
- */
 const alphabetUL = document.querySelector("#alphabet-hold");
 const correctWordUL = document.querySelector("#correct-word-ul");
 let correctWord = "";
@@ -41,7 +38,7 @@ const alphabetArray = [
 ];
 
 for (let i = 0; i < alphabetArray.length; i++) {
-  const letterToPush = `<li><button id="button${alphabetArray[i]}">${alphabetArray[i]}</button></li>`;
+  const letterToPush = `<li><button onclick="getLetter(this)" id="button${alphabetArray[i]}">${alphabetArray[i]}</button></li>`;
   alphabetUL.insertAdjacentHTML("beforeend", letterToPush);
 }
 
@@ -52,14 +49,25 @@ for (let i = 0; i < correctWord.length; i++) {
   correctWordArray.push(correctWord[i]);
 }
 
-// lägga in allt som li / p element i UL.........
 for (let i = 0; i < correctWordArray.length; i++) {
-  const correctWordLetterToPush = `<li><p class="letter${correctWordArray[i]}">${correctWordArray[i]}</p></li>`;
+  const correctWordLetterToPush = `<li><p class="mark-disabler letter${correctWordArray[i]}">${correctWordArray[i]}</p></li>`;
   correctWordUL.insertAdjacentHTML("beforeend", correctWordLetterToPush);
 }
 
 // Gets a random word from word array.
 function getRandomWord() {
-  const categoryWords = ["SWEDEN", "DENMARK", "NORWAY"];
+  const categoryWords = ["SWEDEN", "DENMARK", "USA"];
   correctWord = categoryWords[Math.floor(Math.random() * categoryWords.length)];
 }
+
+// Hitta knappen med hjälp av musklick...
+function getLetter(alphabetUL) {
+  console.log(alphabetUL.innerText);
+}
+
+// hitta knapp med hjälp av knapptryck...
+const bodyElem = document.querySelector("body");
+bodyElem.addEventListener("keydown", (event) => {
+  const keyPressed = event.key.toUpperCase();
+  console.log(keyPressed);
+});
