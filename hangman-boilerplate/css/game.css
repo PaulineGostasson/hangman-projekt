@@ -40,15 +40,16 @@ svg {
 body {
   height: 100vh;
   width: 100vw;
-  background:#fff;
-  background-image:linear-gradient(90deg,
-  transparent 79px,
-  #484848 79px,
-  #484848 81px,
-  transparent 81px),
-  linear-gradient(#eee .1em,
-  transparent .1em);
-  background-size:100% 2em;
+  background: rgb(218, 218, 218);
+  background-image: linear-gradient(
+      90deg,
+      transparent 79px,
+      #484848 79px,
+      #484848 81px,
+      transparent 81px
+    ),
+    linear-gradient(#eee 0.1em, transparent 0.1em);
+  background-size: 100% 2em;
 }
 
 #alphabet-hold li button {
@@ -101,7 +102,7 @@ body {
 }
 
 .make-visible {
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .mark-disabler {
