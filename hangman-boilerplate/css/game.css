@@ -35,12 +35,20 @@ svg {
   margin: 0;
   padding: 0;
   /* background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/5fede1f8-9818-4868-8831-ab9e874dacb7/d32vrbp-ef797cdf-b583-42f9-8d34-b5ab349f3a31.jpg); */
-  background: rgb(100, 100, 100);
 }
 
 body {
   height: 100vh;
   width: 100vw;
+  background:#fff;
+  background-image:linear-gradient(90deg,
+  transparent 79px,
+  #484848 79px,
+  #484848 81px,
+  transparent 81px),
+  linear-gradient(#eee .1em,
+  transparent .1em);
+  background-size:100% 2em;
 }
 
 #alphabet-hold li button {
@@ -63,6 +71,7 @@ body {
   box-shadow: 0 0 10px black;
   padding: 1rem;
   border-radius: 10px;
+  background-color: #eee;
 }
 
 #alphabet-hold li button:hover {
