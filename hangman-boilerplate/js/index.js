@@ -7,6 +7,8 @@ document.querySelector("figure").classList.add("legs");
 const alphabetUL = document.querySelector("#alphabet-hold");
 const correctWordUL = document.querySelector("#correct-word-ul");
 let correctWord = "";
+let wrongGuessesArray = [];
+let rightGuessesArray = [];
 
 const alphabetArray = [
   "A",
@@ -54,27 +56,40 @@ for (let i = 0; i < correctWordArray.length; i++) {
   correctWordUL.insertAdjacentHTML("beforeend", correctWordLetterToPush);
 }
 
-// Gets a random word from word array.
-function getRandomWord() {
-  const categoryWords = ["SWEDEN", "DENMARK", "USA"];
-  correctWord = categoryWords[Math.floor(Math.random() * categoryWords.length)];
-}
-
-// Hitta knappen med hjälp av musklick...
-function getLetter(alphabetUL) {
-  console.log(alphabetUL.innerText);
-}
+let guessOfLetter = "";
 
 // hitta knapp med hjälp av knapptryck...
 const bodyElem = document.querySelector("body");
 bodyElem.addEventListener("keydown", (event) => {
   const keyPressed = event.key.toUpperCase();
-  console.log(keyPressed);
-  let correctGuess = false;
+  guessOfLetter = keyPressed;
+  makeAGuess();
+});
 
-  for(let i = 0; i < correctWord.length; i++) {
-      if (keyPressed === correctWord[i]) {
-          console.log('Rätt bokstav');
-          correctGuess = true;
-      }
-    }});
+// Hitta knappen med hjälp av musklick...
+function getLetter(alphabetUL) {
+  guessOfLetter = alphabetUL.innerText;
+  makeAGuess();
+}
+
+function makeAGuess() {
+  // Kolla om ordet redan finns i arrayen...
+  let isTheGuessCorrect = false;
+  for (let i = -1; i < correctWordArray.length; i++) {
+    if (guessOfLetter === correctWordArray[i]) {
+      console.log("Bokstaven finns med");
+      isTheGuessCorrect = true;
+      rightGuessesArray.push(guessOfLetter);
+    }
+  }
+  if (isTheGuessCorrect === false) {
+    console.log("fel gissning");
+    wrongGuessesArray.push(guessOfLetter);
+  }
+}
+
+// Gets a random word from word array.
+function getRandomWord() {
+  const categoryWords = ["SWEDEN", "DENMARK", "USA"];
+  correctWord = categoryWords[Math.floor(Math.random() * categoryWords.length)];
+}
