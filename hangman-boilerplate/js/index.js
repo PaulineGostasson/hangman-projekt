@@ -70,4 +70,11 @@ const bodyElem = document.querySelector("body");
 bodyElem.addEventListener("keydown", (event) => {
   const keyPressed = event.key.toUpperCase();
   console.log(keyPressed);
-});
+  let correctGuess = false;
+
+  for(let i = 0; i < correctWord.length; i++) {
+      if (keyPressed === correctWord[i]) {
+          console.log('Rätt bokstav');
+          correctGuess = true;
+      }
+    }});
