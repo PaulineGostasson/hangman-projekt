@@ -9,6 +9,11 @@ const correctWordUL = document.querySelector("#correct-word-ul");
 let correctWord = "";
 let wrongGuessesArray = [];
 let rightGuessesArray = [];
+let guessOfLetter = "";
+let thePWeWantToChange = "";
+
+// Get random word from array.
+getRandomWord();
 
 const alphabetArray = [
   "A",
@@ -44,21 +49,17 @@ for (let i = 0; i < alphabetArray.length; i++) {
   alphabetUL.insertAdjacentHTML("beforeend", letterToPush);
 }
 
-getRandomWord();
-
 const correctWordArray = [];
 for (let i = 0; i < correctWord.length; i++) {
   correctWordArray.push(correctWord[i]);
 }
 
 for (let i = 0; i < correctWordArray.length; i++) {
-  const correctWordLetterToPush = `<li><p class="mark-disabler letter${correctWordArray[i]}">${correctWordArray[i]}</p></li>`;
+  correctWordLetterToPush = `<li><p class="mark-disabler letter${correctWordArray[i]}">${correctWordArray[i]}</p></li>`;
   correctWordUL.insertAdjacentHTML("beforeend", correctWordLetterToPush);
 }
 
-let guessOfLetter = "";
-
-// hitta knapp med hjälp av knapptryck...
+// This is what happens when we press a keyboard button.
 const bodyElem = document.querySelector("body");
 bodyElem.addEventListener("keydown", (event) => {
   const keyPressed = event.key.toUpperCase();
@@ -66,30 +67,41 @@ bodyElem.addEventListener("keydown", (event) => {
   makeAGuess();
 });
 
-// Hitta knappen med hjälp av musklick...
 function getLetter(alphabetUL) {
   guessOfLetter = alphabetUL.innerText;
   makeAGuess();
 }
 
+// MAKE A GUESS LOGIC!
 function makeAGuess() {
-  // Kolla om ordet redan finns i arrayen...
-  let isTheGuessCorrect = false;
-  for (let i = -1; i < correctWordArray.length; i++) {
-    if (guessOfLetter === correctWordArray[i]) {
-      console.log("Bokstaven finns med");
-      isTheGuessCorrect = true;
-      rightGuessesArray.push(guessOfLetter);
+  let pTag = document.querySelectorAll(`.letter${guessOfLetter}`);
+  if (wrongGuessesArray.includes(guessOfLetter)) {
+    console.log("Du har redan gissat på denna och fått fel.");
+  } else if (rightGuessesArray.includes(guessOfLetter)) {
+    console.log("Du har redan gissat på denna och fått rätt.");
+  } else {
+    let isTheGuessCorrect = false;
+    for (let i = 0; i < correctWordArray.length; i++) {
+      if (guessOfLetter === correctWordArray[i]) {
+        isTheGuessCorrect = true;
+        rightGuessesArray.push(guessOfLetter);
+        console.log("rätt gissning");
+        console.log(`Array med rätt gissningar: ${rightGuessesArray}`);
+        pTag.forEach((x) => {
+          x.classList.add("make-visible");
+        });
+      }
     }
-  }
-  if (isTheGuessCorrect === false) {
-    console.log("fel gissning");
-    wrongGuessesArray.push(guessOfLetter);
+    if (isTheGuessCorrect === false) {
+      wrongGuessesArray.push(guessOfLetter);
+      console.log("fel gissning");
+      console.log(`Array med fel gissningar: ${wrongGuessesArray}`);
+    }
   }
 }
 
-// Gets a random word from word array.
+// Function that gives us a random word from the categoryWords Array when called.
 function getRandomWord() {
-  const categoryWords = ["SWEDEN", "DENMARK", "USA"];
+  const categoryWords = ["USA", "SWEDEN"];
   correctWord = categoryWords[Math.floor(Math.random() * categoryWords.length)];
 }
