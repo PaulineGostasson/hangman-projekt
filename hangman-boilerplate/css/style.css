@@ -37,7 +37,7 @@ h1 {
   font-weight: normal;
   user-select: none;
   font-family: "Fredericka the Great", cursive;
-  margin: 0 6rem;
+  margin: 2rem 6rem;
   text-align: center;
   line-height: 4rem;
   text-shadow: 0 0 4px rgb(0, 0, 0);
@@ -45,16 +45,18 @@ h1 {
   max-width: 600px;
 }
 
-a {
+.theme {
   text-decoration: none;
-  margin: 5rem auto;
-  padding: 2rem 3rem;
+  margin: 1rem 1rem;
+  padding: 0.5rem;
   box-shadow: 0 0 2px white;
-  font-size: 4rem;
+  font-size: 2rem;
   background: rgba(0, 0, 0, 0.637);
   color: rgb(255, 255, 255);
   user-select: none;
   font-family: "Shalimar", cursive;
+  align-items: center;
+  justify-content: center;
 }
 
 a:hover {
@@ -82,6 +84,7 @@ a:hover {
   font-family: "Shalimar", cursive;
   user-select: none;
   text-shadow: 0 0 5px rgb(0, 0, 0);
+  margin-top: 2rem;
 }
 
 #names-txt {
@@ -91,4 +94,10 @@ a:hover {
   font-size: 3rem;
   user-select: none;
   text-shadow: 0 0 5px rgb(0, 0, 0);
+}
+
+@media screen and (max-width: 600px) {
+  .theme {
+    display: flex;
+  }
 }

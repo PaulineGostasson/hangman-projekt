@@ -1,14 +1,17 @@
 const alphabetUL = document.querySelector("#alphabet-hold");
 const correctWordUL = document.querySelector("#correct-word-ul");
 const wrongGuesses = document.querySelector("#guesses-left");
-const resetButton = document
-  .querySelector("#reset-button")
-  .addEventListener("click", () => {
+let resetButton = document.querySelectorAll(".reset-button");
+const slider = document.querySelector(".slider");
+const winOrLoseText = document.querySelector(".win-or-lose-text");
+
+resetButton.forEach((button) => {
+  button.addEventListener("click", () => {
     window.location.reload();
   });
+});
 
 let wrongGuessesCounter = 5;
-
 let correctWord = "";
 let wrongGuessesArray = [];
 let rightGuessesArray = [];
@@ -125,19 +128,30 @@ function makeAGuess() {
 
       if (wrongGuessesCounter === 0) {
         document.querySelector("figure").classList.add("legs");
-        gameOver();
       }
 
       console.log("fel gissning");
       console.log(`Array med fel gissningar: ${wrongGuessesArray}`);
     }
   }
+  // WIN
+  if (rightGuessesArray.length === correctWordArray.length) {
+    winOrLoseText.innerText = "YOU WON";
+    toggleSlider();
+  }
+  // LOSE
+  if (wrongGuessesArray.length === 5) {
+    winOrLoseText.innerText = "YOU LOST";
+    toggleSlider();
+  }
 }
 
-function gameOver() {}
+function toggleSlider() {
+  slider.classList.toggle("show");
+}
 
 // Function that gives us a random word from the categoryWords Array when called.
 function getRandomWord() {
-  const categoryWords = ["USA", "SWEDEN"];
+  let categoryWords = ["DOG", "BIRD"];
   correctWord = categoryWords[Math.floor(Math.random() * categoryWords.length)];
 }
