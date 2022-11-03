@@ -1,11 +1,14 @@
-document.querySelector("figure").classList.add("scaffold");
 document.querySelector("figure").classList.add("head");
 document.querySelector("figure").classList.add("body");
 document.querySelector("figure").classList.add("arms");
 document.querySelector("figure").classList.add("legs");
+document.querySelector("figure").classList.add("scaffold");
 
 const alphabetUL = document.querySelector("#alphabet-hold");
 const correctWordUL = document.querySelector("#correct-word-ul");
+const wrongGuesses = document.querySelector("#guesses-left");
+let wrongGuessesCounter = 5;
+
 let correctWord = "";
 let wrongGuessesArray = [];
 let rightGuessesArray = [];
@@ -98,6 +101,15 @@ function makeAGuess() {
     if (isTheGuessCorrect === false) {
       wrongGuessesArray.push(guessOfLetter);
       alphaButton.classList.add("wrong-answer");
+
+      if (wrongGuessesCounter > 0) {
+        wrongGuessesCounter--;
+        wrongGuesses.innerText = `Guesses Left: ${wrongGuessesCounter}`;
+      }
+
+      if (wrongGuessesCounter === 4) {
+      }
+
       console.log("fel gissning");
       console.log(`Array med fel gissningar: ${wrongGuessesArray}`);
     }

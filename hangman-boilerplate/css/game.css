@@ -8,19 +8,19 @@ figure svg #ground {
   opacity: 1;
 }
 figure.scaffold svg #scaffold {
-  opacity: 0;
+  opacity: 1;
 }
 figure.head svg #head {
-  opacity: 0;
+  opacity: 1;
 }
 figure.body svg #body {
-  opacity: 0;
+  opacity: 1;
 }
 figure.arms svg #arms {
-  opacity: 0;
+  opacity: 1;
 }
 figure.legs svg #legs {
-  opacity: 0;
+  opacity: 1;
 }
 
 svg {
@@ -120,6 +120,12 @@ body {
   -moz-user-select: none; /* Old versions of Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none;
+}
+
+#guesses-left {
+  text-align: center;
+  width: 100vw;
+  margin-top: 3rem;
 }
 
 @media screen and (max-width: 820px) {
