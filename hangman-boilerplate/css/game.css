@@ -40,20 +40,20 @@ svg {
 body {
   height: 100vh;
   width: 100vw;
-  background: rgb(218, 218, 218);
+  background: rgb(39, 39, 39);
   background-image: linear-gradient(
       90deg,
       transparent 79px,
-      #484848 79px,
+      #2f2f2f 79px,
       #484848 81px,
       transparent 81px
     ),
-    linear-gradient(#eee 0.1em, transparent 0.1em);
+    linear-gradient(rgb(52, 52, 52) 0.2em, transparent 0.1em);
   background-size: 100% 2em;
 }
 
 #alphabet-hold li button {
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   color: white;
   border-radius: 2px;
   height: 2.2rem;
@@ -72,7 +72,7 @@ body {
   box-shadow: 0 0 10px black;
   padding: 1rem;
   border-radius: 10px;
-  background-color: #eee;
+  background-color: rgb(17, 17, 17);
 }
 
 #alphabet-hold li button:hover {
@@ -105,6 +105,14 @@ body {
   color: rgb(0, 0, 0);
 }
 
+.right-answer {
+  box-shadow: 0px 0px 5px green;
+}
+
+.wrong-answer {
+  box-shadow: 0px 0px 5px red;
+}
+
 .mark-disabler {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
@@ -112,4 +120,20 @@ body {
   -moz-user-select: none; /* Old versions of Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none;
+}
+
+@media screen and (max-width: 820px) {
+  body {
+    height: 100vh;
+    width: 100vw;
+    background: rgb(39, 39, 39);
+    background-image: linear-gradient(
+        /* 90deg, */ transparent 79px,
+        #2f2f2f 79px,
+        #484848 81px,
+        transparent 81px
+      ),
+      linear-gradient(rgb(52, 52, 52) 0.2em, transparent 0.1em);
+    background-size: 100% 2em;
+  }
 }

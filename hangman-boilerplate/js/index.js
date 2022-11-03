@@ -75,6 +75,8 @@ function getLetter(alphabetUL) {
 // MAKE A GUESS LOGIC!
 function makeAGuess() {
   let pTag = document.querySelectorAll(`.letter${guessOfLetter}`);
+  let alphaButton = document.querySelector(`#button${guessOfLetter}`);
+
   if (wrongGuessesArray.includes(guessOfLetter)) {
     console.log("Du har redan gissat på denna och fått fel.");
   } else if (rightGuessesArray.includes(guessOfLetter)) {
@@ -90,10 +92,12 @@ function makeAGuess() {
         pTag.forEach((x) => {
           x.classList.add("make-visible");
         });
+        alphaButton.classList.add("right-answer");
       }
     }
     if (isTheGuessCorrect === false) {
       wrongGuessesArray.push(guessOfLetter);
+      alphaButton.classList.add("wrong-answer");
       console.log("fel gissning");
       console.log(`Array med fel gissningar: ${wrongGuessesArray}`);
     }

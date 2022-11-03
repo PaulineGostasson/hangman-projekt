@@ -1,3 +1,9 @@
+/* IMPORTS */
+/* font-family: 'Shalimar', cursive; */
+@import url("https://fonts.googleapis.com/css2?family=Shalimar&display=swap");
+/* font-family: 'Fredericka the Great', cursive; */
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -25,13 +31,63 @@ main {
   width: 100vw;
 }
 
+h1 {
+  color: white;
+  font-weight: normal;
+  user-select: none;
+  font-family: "Fredericka the Great", cursive;
+  margin: 0 6rem;
+  text-align: center;
+  line-height: 4rem;
+  text-shadow: 0 0 4px rgb(0, 0, 0);
+  font-size: 3rem;
+  max-width: 600px;
+}
+
 a {
   text-decoration: none;
-  margin-top: 1rem;
-  border: 1px solid black;
-  padding: 0.8rem 1.2rem;
+  margin: 5rem auto;
+  padding: 2rem 3rem;
+  box-shadow: 0 0 2px white;
+  font-size: 4rem;
+  background: rgba(0, 0, 0, 0.637);
+  color: rgb(255, 255, 255);
+  user-select: none;
+  font-family: "Shalimar", cursive;
 }
 
 a:hover {
-  background: rgb(255, 249, 249);
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 5px rgb(245, 173, 255);
+  transition: all 0.2s ease-out;
+}
+
+#bg-video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#made-by-txt {
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  border-bottom: 1px solid rgb(243, 154, 255);
+  width: 13rem;
+  font-family: "Shalimar", cursive;
+  user-select: none;
+  text-shadow: 0 0 5px rgb(0, 0, 0);
+}
+
+#names-txt {
+  margin-top: 0.5rem;
+  color: white;
+  font-family: "Shalimar", cursive;
+  font-size: 3rem;
+  user-select: none;
+  text-shadow: 0 0 5px rgb(0, 0, 0);
 }
