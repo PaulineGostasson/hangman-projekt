@@ -1,12 +1,12 @@
-document.querySelector("figure").classList.add("head");
-document.querySelector("figure").classList.add("body");
-document.querySelector("figure").classList.add("arms");
-document.querySelector("figure").classList.add("legs");
-document.querySelector("figure").classList.add("scaffold");
-
 const alphabetUL = document.querySelector("#alphabet-hold");
 const correctWordUL = document.querySelector("#correct-word-ul");
 const wrongGuesses = document.querySelector("#guesses-left");
+const resetButton = document
+  .querySelector("#reset-button")
+  .addEventListener("click", () => {
+    window.location.reload();
+  });
+
 let wrongGuessesCounter = 5;
 
 let correctWord = "";
@@ -108,6 +108,24 @@ function makeAGuess() {
       }
 
       if (wrongGuessesCounter === 4) {
+        document.querySelector("figure").classList.add("scaffold");
+      }
+
+      if (wrongGuessesCounter === 3) {
+        document.querySelector("figure").classList.add("head");
+      }
+
+      if (wrongGuessesCounter === 2) {
+        document.querySelector("figure").classList.add("body");
+      }
+
+      if (wrongGuessesCounter === 1) {
+        document.querySelector("figure").classList.add("arms");
+      }
+
+      if (wrongGuessesCounter === 0) {
+        document.querySelector("figure").classList.add("legs");
+        gameOver();
       }
 
       console.log("fel gissning");
@@ -115,6 +133,8 @@ function makeAGuess() {
     }
   }
 }
+
+function gameOver() {}
 
 // Function that gives us a random word from the categoryWords Array when called.
 function getRandomWord() {
