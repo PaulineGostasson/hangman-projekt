@@ -1,4 +1,7 @@
-@import url(style.css);
+/* font-family: 'Shalimar', cursive; */
+@import url("https://fonts.googleapis.com/css2?family=Shalimar&display=swap");
+/* font-family: 'Fredericka the Great', cursive; */
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
 
 figure svg > * {
   opacity: 0;
@@ -25,7 +28,7 @@ figure.legs svg #legs {
 
 svg {
   width: 100vw;
-  max-height: 50vh;
+  max-height: 21rem;
   padding: 3rem;
   margin: 0 auto;
 }
@@ -34,7 +37,6 @@ svg {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/5fede1f8-9818-4868-8831-ab9e874dacb7/d32vrbp-ef797cdf-b583-42f9-8d34-b5ab349f3a31.jpg); */
 }
 
 body {
@@ -56,9 +58,10 @@ body {
   background-color: rgb(0, 0, 0);
   color: white;
   border-radius: 2px;
-  height: 2.2rem;
-  width: 2.2rem;
+  height: 2.5rem;
+  width: 2.5rem;
   margin: 5px;
+  font-size: 18px;
 }
 
 #alphabet-hold {
@@ -76,7 +79,7 @@ body {
 }
 
 #alphabet-hold li button:hover {
-  background-color: gray;
+  background-color: rgb(37, 37, 37);
   cursor: pointer;
 }
 
@@ -94,10 +97,10 @@ body {
 
 #correct-word-ul li {
   margin: 0 1rem 3rem 1rem;
-  font-size: 32px;
+  font-size: 20px;
   border-bottom: 2px solid black;
   color: transparent;
-  width: 1.5rem;
+  width: 1rem;
   text-align: center;
 }
 
@@ -106,49 +109,58 @@ body {
 }
 
 .right-answer {
-  box-shadow: 0px 0px 5px green;
+  box-shadow: 0px 0px 5px rgb(50, 255, 43);
 }
 
 .wrong-answer {
-  box-shadow: 0px 0px 5px red;
+  box-shadow: 0px 0px 5px rgb(231, 0, 0);
 }
 
 .mark-disabler {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
+  -khtml-user-select: none; /* Conqueror HTML */
   -moz-user-select: none; /* Old versions of Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none;
 }
 
 #guesses-left {
+  border: 2px solid black;
+  margin: 0 auto;
+  background-color: black;
   text-align: center;
-  width: 100vw;
-  margin-top: 3rem;
-}
-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 15rem;
+  border-radius: 30px;
+  padding: 0.3rem;
+  font-size: 17px;
+  color: white;
+  box-shadow: 0 0 5px rgb(121, 121, 121);
 }
 
-.reset-button,
-.play-again-btn {
-  margin-top: 2rem;
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  border: none;
+}
+
+.reset-button {
   background-color: #000000e5;
   color: white;
   padding: 1rem 2rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   border-radius: 7px;
   border: none;
   cursor: pointer;
   user-select: none;
+  text-decoration: none;
+  font-family: "Helvetica Neue";
 }
 
-.reset-button:hover,
-.play-again-btn:hover {
-  background-color: #000000b4;
+.reset-button:hover {
+  box-shadow: 0 0 1px rgb(255, 170, 218);
+  color: rgb(255, 170, 218);
 }
 
 /* ━━━━━━━━━━| SLIDER |━━━━━━━━━━ */
@@ -158,37 +170,39 @@ footer {
   left: 0;
   height: 100vh;
   width: 100%;
-  background-color: rgb(44, 44, 44);
+  background-color: rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
   gap: 2rem;
   justify-content: center;
   align-items: center;
-  transition: all 0.3s ease;
   border: 2px solid black;
   z-index: 1;
   display: none;
 }
 
 .slider.show {
-  background-color: rgba(0, 0, 0, 0.96);
   display: flex;
 }
 
 .slider p {
-  font-size: 20px;
+  font-size: 30px;
   min-width: 13rem;
-  background-color: #0d252f;
+  background-color: rgb(216, 182, 182);
   padding: 1rem;
   border-radius: 10px;
   text-align: center;
+  font-family: "Fredericka the Great", cursive;
 }
 
+.slider button {
+  background-color: rgb(32, 32, 32);
+  font-family: "Fredericka the Great", cursive;
+}
+
+/* ━━━━━━━━━━| MEDIA Q |━━━━━━━━━━ */
 @media screen and (max-width: 820px) {
   body {
-    height: 100vh;
-    width: 100vw;
-    background: rgb(39, 39, 39);
     background-image: linear-gradient(
         /* 90deg, */ transparent 79px,
         #2f2f2f 79px,
@@ -196,6 +210,22 @@ footer {
         transparent 81px
       ),
       linear-gradient(rgb(52, 52, 52) 0.2em, transparent 0.1em);
-    background-size: 100% 2em;
+  }
+  svg {
+    max-height: 19rem;
+    padding: 3rem;
+  }
+}
+
+@media screen and (max-height: 670px) {
+  svg {
+    max-height: 15rem;
+    padding: 2rem;
+  }
+}
+@media screen and (max-height: 620px) {
+  svg {
+    max-height: 11rem;
+    padding: 2rem;
   }
 }

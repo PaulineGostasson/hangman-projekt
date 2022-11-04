@@ -1,4 +1,3 @@
-/* IMPORTS */
 /* font-family: 'Shalimar', cursive; */
 @import url("https://fonts.googleapis.com/css2?family=Shalimar&display=swap");
 /* font-family: 'Fredericka the Great', cursive; */
@@ -8,13 +7,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-:root {
-  --errorcolor: rgb(243, 56, 56);
-  --succescolor: rgb(49, 255, 49);
-  --backgroundcolor: rgb(192, 192, 192);
-  --textcolor: black;
 }
 
 body {
@@ -37,31 +29,40 @@ h1 {
   font-weight: normal;
   user-select: none;
   font-family: "Fredericka the Great", cursive;
-  margin: 2rem 6rem;
+  margin: 0 1rem 4rem 1rem;
   text-align: center;
   line-height: 4rem;
   text-shadow: 0 0 4px rgb(0, 0, 0);
-  font-size: 3rem;
+  font-size: 42px;
   max-width: 600px;
 }
 
-.theme {
+h2 {
+  color: rgb(255, 255, 255);
+  font-weight: normal;
+  user-select: none;
+  font-family: "Fredericka the Great", cursive;
+  text-align: center;
+  text-shadow: 0 0 4px rgb(0, 0, 0);
+  font-size: 30px;
+  max-width: 600px;
+}
+
+a {
   text-decoration: none;
-  margin: 1rem 1rem;
-  padding: 0.5rem;
-  box-shadow: 0 0 2px white;
-  font-size: 2rem;
+  text-align: center;
+  padding: 2rem 5rem;
+  box-shadow: 0 0 2px rgb(255, 96, 96);
   background: rgba(0, 0, 0, 0.637);
   color: rgb(255, 255, 255);
   user-select: none;
   font-family: "Shalimar", cursive;
-  align-items: center;
-  justify-content: center;
+  font-size: 4rem;
 }
 
 a:hover {
   background: rgba(0, 0, 0, 0.8);
-  box-shadow: 0 0 5px rgb(245, 173, 255);
+  box-shadow: 0 0 6px rgb(163, 16, 16);
   transition: all 0.2s ease-out;
 }
 
@@ -76,28 +77,22 @@ a:hover {
 }
 
 #made-by-txt {
-  color: white;
+  color: rgb(240, 240, 240);
   font-size: 2rem;
   text-align: center;
-  border-bottom: 1px solid rgb(243, 154, 255);
+  border-bottom: 1px solid rgba(155, 0, 0, 0.411);
   width: 13rem;
   font-family: "Shalimar", cursive;
   user-select: none;
   text-shadow: 0 0 5px rgb(0, 0, 0);
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 
 #names-txt {
   margin-top: 0.5rem;
-  color: white;
+  color: rgb(240, 240, 240);
   font-family: "Shalimar", cursive;
   font-size: 3rem;
   user-select: none;
   text-shadow: 0 0 5px rgb(0, 0, 0);
-}
-
-@media screen and (max-width: 600px) {
-  .theme {
-    display: flex;
-  }
 }
