@@ -44,7 +44,7 @@ const alphabetArray = [
 ];
 
 getRandomWord();
-console.log(correctWord);
+// console.log(correctWord);
 
 // This loop creates the keyboard buttons in a list.
 for (let i = 0; i < alphabetArray.length; i++) {
@@ -64,7 +64,7 @@ for (let i = 0; i < correctWord.length; i++) {
   correctWordArray.push(correctWord[i]);
 }
 
-// ?
+// fills our UL with LI elements with different classes.
 for (let i = 0; i < correctWordArray.length; i++) {
   correctWordLetterToPush = `<li><p class="mark-disabler letter${correctWordArray[i]}">${correctWordArray[i]}</p></li>`;
   correctWordUL.insertAdjacentHTML("beforeend", correctWordLetterToPush);
@@ -73,8 +73,12 @@ for (let i = 0; i < correctWordArray.length; i++) {
 // Find keyboard press key and make a guess on that letter.
 bodyElem.addEventListener("keydown", (event) => {
   const keyPressed = event.key.toUpperCase();
-  guessOfLetter = keyPressed;
-  makeAGuess();
+  for (let i = 0; i < alphabetArray.length; i++) {
+    if (keyPressed === alphabetArray[i]) {
+      guessOfLetter = keyPressed;
+      makeAGuess();
+    }
+  }
 });
 
 // Find button press key and make a guess on that letter.
@@ -323,8 +327,3 @@ function getRandomWord() {
   correctWord = categoryWords[Math.floor(Math.random() * categoryWords.length)];
   correctWordTxt.innerText = `Correct Word : ${correctWord}`;
 }
-
-/* TODO FREDAG 2022-11-04:
-6. städa kod som inte gör något och dubbelkolla så allt är på engelska och bra kommenterat...
-7. TESTA OM PROGRAMMET FUNKAR SOM DET SKA! :D
-LADDA UPP / LÄNKA SIDAN TILL JOHAN OCH CHRISTOFFER :D :) :) :D*/
