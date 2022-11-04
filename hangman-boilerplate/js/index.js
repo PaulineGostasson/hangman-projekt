@@ -5,6 +5,7 @@ const resetButton = document.querySelectorAll(".reset-button");
 const slider = document.querySelector(".slider");
 const winOrLoseText = document.querySelector(".win-or-lose-text");
 const bodyElem = document.querySelector("body");
+const correctWordTxt = document.querySelector(".correct-word-txt");
 const correctWordArray = [];
 const wrongGuessesArray = [];
 const rightGuessesArray = [];
@@ -43,6 +44,7 @@ const alphabetArray = [
 ];
 
 getRandomWord();
+console.log(correctWord);
 
 // This loop creates the keyboard buttons in a list.
 for (let i = 0; i < alphabetArray.length; i++) {
@@ -137,11 +139,14 @@ function makeAGuess() {
   // WIN
   if (rightGuessesArray.length === correctWordArray.length) {
     winOrLoseText.innerText = "YOU WON";
+    slider.style.backgroundColor = "#076D00";
+    correctWordTxt.style.display = "none";
     toggleSlider();
   }
   // LOSE
   if (wrongGuessesArray.length === 5) {
     winOrLoseText.innerText = "YOU LOST";
+    slider.style.backgroundColor = "#850000";
     toggleSlider();
   }
 }
@@ -316,13 +321,10 @@ function getRandomWord() {
     return oneCountry.toUpperCase();
   });
   correctWord = categoryWords[Math.floor(Math.random() * categoryWords.length)];
+  correctWordTxt.innerText = `Correct Word : ${correctWord}`;
 }
 
 /* TODO FREDAG 2022-11-04:
-2. Lägga in en kontroll som kollar om den bara gissar om bokstaven är A-Z...
-3. Gå igenom Project och kolla vilka tasks vi har klarat av och inte...
-4. Styla färger på win/lose slider + Lägg till rätt ord...
-5. Kolla om vi är nöjda med all design...
 6. städa kod som inte gör något och dubbelkolla så allt är på engelska och bra kommenterat...
 7. TESTA OM PROGRAMMET FUNKAR SOM DET SKA! :D
 LADDA UPP / LÄNKA SIDAN TILL JOHAN OCH CHRISTOFFER :D :) :) :D*/

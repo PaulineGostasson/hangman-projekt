@@ -159,8 +159,7 @@ body {
 }
 
 .reset-button:hover {
-  box-shadow: 0 0 1px rgb(255, 170, 218);
-  color: rgb(255, 170, 218);
+  background-color: rgb(24, 24, 24);
 }
 
 /* ━━━━━━━━━━| SLIDER |━━━━━━━━━━ */
@@ -185,10 +184,10 @@ body {
   display: flex;
 }
 
-.slider p {
+.win-or-lose-text {
   font-size: 30px;
   min-width: 13rem;
-  background-color: rgb(216, 182, 182);
+  background-color: rgb(238, 238, 238);
   padding: 1rem;
   border-radius: 10px;
   text-align: center;
@@ -198,6 +197,16 @@ body {
 .slider button {
   background-color: rgb(32, 32, 32);
   font-family: "Fredericka the Great", cursive;
+}
+
+.correct-word-txt {
+  font-size: 20px;
+  min-width: 13rem;
+  background-color: rgb(238, 238, 238);
+
+  padding: 0.5rem;
+  border-radius: 10px;
+  text-align: center;
 }
 
 /* ━━━━━━━━━━| MEDIA Q |━━━━━━━━━━ */
